@@ -74,18 +74,18 @@
             <tr onmouseout="rsm_stop()" onmouseover="rsm_start()" bgcolor="#ffffd0">
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
-                  <div class="two" id='rsm_image'><video  width=100% height=100% muted autoplay loop>
+                  <div class="two" id='rsm_image'><video id="rsm_video" width=100% height=100% muted loop>
                   <source src="images/rsm_loc.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                   </video></div>
                 </div>
                 <script type="text/javascript">
                   function rsm_start() {
-                    document.getElementById('rsm_image').style.opacity = "1";
+                    document.getElementById('rsm_video').play();
                   }
       
                   function rsm_stop() {
-                    document.getElementById('rsm_image').style.opacity = "0";
+                    document.getElementById('rsm_video').stop();
                   }
                   rsm_stop()
                 </script>
@@ -144,21 +144,23 @@
             <tr onmouseout="epn_stop()" onmouseover="epn_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
-                  <div class="two" id='epn_image'><video  width=100% height=100% muted autoplay loop>
-                  <source src="images/epn.mov" type="video/mp4">
-                  Your browser does not support the video tag.
-                  </video></div>
-
+                  <div class="two" id="epn_image">
+                    <video id="epn_video" width="100%" height="100%" muted loop>
+                      <source src="images/epn.mov" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                 </div>
                 <script type="text/javascript">
                   function epn_start() {
-                    document.getElementById('epn_image').style.opacity = "1";
+                    // Play the video when the mouse is over the element
+                    document.getElementById('epn_video').play();
                   }
-      
+            
                   function epn_stop() {
-                    document.getElementById('epn_image').style.opacity = "0";
+                    // Pause the video when the mouse leaves the element
+                    document.getElementById('epn_video').pause();
                   }
-                  epn_stop()
                 </script>
               </td>
               <td style="padding:20px;width:75%;vertical-align:middle">
@@ -181,20 +183,20 @@
         <tr onmouseout="hdm_stop()" onmouseover="hdm_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
-              <div class="two" id='hdm_image'><video  width=100% height=100% muted autoplay loop>
+              <div class="two" id='hdm_image'>
+                <video id="hdm_video" width=100% height=100% muted loop>
               <source src="images/hdm_overview.mp4" type="video/mp4">
               Your browser does not support the video tag.
               </video></div>
             </div>
             <script type="text/javascript">
               function hdm_start() {
-                document.getElementById('hdm_image').style.opacity = "1";
+                document.getElementById('hdm_video').play();
               }
   
               function hdm_stop() {
-                document.getElementById('hdm_image').style.opacity = "0";
+                document.getElementById('hdm_video').stop();
               }
-              hdm_stop()
             </script>
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
@@ -220,7 +222,8 @@
       <tr onmouseout="calc_stop()" onmouseover="calc_start()" bgcolor="#ffffd0">
         <td style="padding:20px;width:25%;vertical-align:middle">
           <div class="one">
-            <div class="two" id='calc_image'><video  width=100% height=100% muted autoplay loop>
+            <div class="two" id='calc_image'>
+              <video id="calc_video" width=100% height=100% muted loop>
             <source src="images/calc.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video></div>
@@ -228,13 +231,12 @@
           </div>
           <script type="text/javascript">
             function calc_start() {
-              document.getElementById('calc_image').style.opacity = "1";
+              document.getElementById('calc_video').play();
             }
 
             function calc_stop() {
-              document.getElementById('calc_image').style.opacity = "0";
+              document.getElementById('calc_video').stop();
             }
-            calc_stop()
           </script>
         </td>
         <td style="padding:20px;width:75%;vertical-align:middle">
